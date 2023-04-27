@@ -188,7 +188,12 @@ def main():
     # Plot decision boundary
     x1_vals = np.linspace(np.min(df_X[:,0]), np.max(df_X[:,0]), 100)
     x2_vals = -(theta[0] + theta[1]*x1_vals) / theta[1]
-    plt.plot(x1_vals, x2_vals, label='Decision Boundary')
+    plt.plot(x1_vals, x2_vals, label='Newton Decision Boundary')
+
+     # Plot decision boundary
+    gd_x1_vals = np.linspace(np.min(df_X[:,0]), np.max(df_X[:,0]), 100)
+    gd_x2_vals = -(gd_theta[0] + gd_theta[1]*gd_x1_vals) / gd_theta[1]
+    plt.plot(gd_x1_vals, gd_x2_vals, label='Standard Decision Boundary')
 
     # Set x and y limits
     plt.xlim(-10, 10)
